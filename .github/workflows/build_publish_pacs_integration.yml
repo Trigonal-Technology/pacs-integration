@@ -1,9 +1,9 @@
-name: Build and Publish PACS Integration
+name: Publish PACS Integration
 on:
   push:
     branches:
       - master
-      - dev
+      - dev 
       - 'release-*'
     tags:
       - '[0-9]+.[0-9]+.[0-9]+'
@@ -28,13 +28,11 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: "corretto"
-          java-version: "8"
+          java-version: "17"
       # - name: Run Unit Tests
       #   run: ./mvnw --no-transfer-progress clean test
       - name: Package
-        # run: ./mvnw --no-transfer-progress clean package -DskipTests
         run: ./mvnw --no-transfer-progress clean package -Dmaven.test.skip=true
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
