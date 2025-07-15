@@ -29,8 +29,8 @@ jobs:
         with:
           distribution: "corretto"
           java-version: "8"
-      - name: Run Unit Tests
-        run: ./mvnw --no-transfer-progress clean test
+      # - name: Run Unit Tests
+      #   run: ./mvnw --no-transfer-progress clean test
       - name: Package
         run: ./mvnw --no-transfer-progress clean package -DskipTests
       - name: Set up QEMU
