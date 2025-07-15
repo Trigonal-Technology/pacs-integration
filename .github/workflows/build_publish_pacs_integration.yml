@@ -32,7 +32,9 @@ jobs:
       # - name: Run Unit Tests
       #   run: ./mvnw --no-transfer-progress clean test
       - name: Package
-        run: ./mvnw --no-transfer-progress clean package -DskipTests
+        # run: ./mvnw --no-transfer-progress clean package -DskipTests
+        run: ./mvnw --no-transfer-progress clean package -Dmaven.test.skip=true
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
