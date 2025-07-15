@@ -28,7 +28,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: "corretto"
-          java-version: "7"
+          java-version: "17"
       # - name: Run Unit Tests
       #   run: ./mvnw --no-transfer-progress clean test
       - name: Package
